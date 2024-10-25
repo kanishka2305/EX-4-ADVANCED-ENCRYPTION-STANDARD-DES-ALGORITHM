@@ -1,4 +1,4 @@
-# EX-7: DATA ENCRYPTION STANDARD(DES)
+# EX-8: ADVANCED ENCRYPTION STANDARD(AES)
 
 ## Aim:
   To use Advanced Encryption Standard (AES) Algorithm for a practical application like URL Encryption.
@@ -14,36 +14,41 @@
 #include <stdio.h>
 #include <string.h>
 
-void xor_encrypt_decrypt(char *input, char *key)
- {
+void xor_encrypt_decrypt(char *input, char *key) {
     int input_len = strlen(input);
     int key_len = strlen(key);
 
-    for (int i = 0; i < input_len; i++)
-    {
-         input[i] = input[i] ^ key[i % key_len]; // XOR encryption
+    for (int i = 0; i < input_len; i++) {
+        input[i] = input[i] ^ key[i % key_len]; 
     }
 }
 
-int main()
-{
-   char url[] = "https://github.com/kameshlevi";
-   char key[] = "secretkey"; // Simple key for XOR encryption
+int main() {
+    char url[256], key[256];
 
-   printf("Original URL: %s\n", url);
+    // Asking for user input
+    printf("Enter the URL/string to encrypt: ");
+    fgets(url, sizeof(url), stdin);
+    url[strcspn(url, "\n")] = '\0'; // Remove trailing newline from fgets
 
-   // Encrypt the URL
-   xor_encrypt_decrypt(url, key);
-   printf("Encrypted URL: %s\n", url);
+    printf("Enter the key for encryption: ");
+    fgets(key, sizeof(key), stdin);
+    key[strcspn(key, "\n")] = '\0'; // Remove trailing newline from fgets
 
-   // Decrypt the URL (since XOR is reversible using the same key)
-   xor_encrypt_decrypt(url, key);
-   printf("Decrypted URL: %s\n", url);
-   return 0;
+    printf("Original URL: %s\n", url);
+
+    xor_encrypt_decrypt(url, key);
+    printf("Encrypted URL: %s\n", url);
+
+    xor_encrypt_decrypt(url, key);
+    printf("Decrypted URL: %s\n", url);
+
+    return 0;
 }
 ```
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/d79eb414-69a5-4673-a910-cf806689ac85)
+![image](https://github.com/user-attachments/assets/67dd82e4-7a73-4a4a-9745-2fb7b930442a)
+
 
 
 ## RESULT: 
