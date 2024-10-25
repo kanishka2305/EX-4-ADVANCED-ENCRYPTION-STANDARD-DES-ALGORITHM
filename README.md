@@ -1,4 +1,4 @@
-# EX-8: Implement-the-AES-Encryption-and-Decryption
+# EX-7: DATA ENCRYPTION STANDARD(DES)
 
 ## Aim:
   To use Advanced Encryption Standard (AES) Algorithm for a practical application like URL Encryption.
@@ -27,7 +27,7 @@ void xor_encrypt_decrypt(char *input, char *key)
 
 int main()
 {
-   char url[] = "https://github.com/Kanishka";
+   char url[] = "https://github.com/kameshlevi";
    char key[] = "secretkey"; // Simple key for XOR encryption
 
    printf("Original URL: %s\n", url);
@@ -41,10 +41,9 @@ int main()
    printf("Decrypted URL: %s\n", url);
    return 0;
 }
-
 ```
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/59a3d753-f9f9-4398-bb34-10c8cda8dc95)
+![image](https://github.com/user-attachments/assets/d79eb414-69a5-4673-a910-cf806689ac85)
 
 
 ## RESULT: 
